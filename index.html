@@ -5,46 +5,217 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Single Price Grid Component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    html{
+      height: 100%;
+    }
+
+    body{
+      font-size: 16px;
+      font-family: "Karla", sans-serif;
+      font-weight: 400;
+
+      background-color: hsl(204, 43%, 93%);
+
+      margin: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-card{
+      width: 635px;
+      height: 475px;
+      box-shadow: 0px 15px 30px rgba(0, 81, 171, 0.148847);
+      border-radius: 8px;
+    }
+
+    .section-header{
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .section-header > p{
+      color: hsl(218, 22%, 67%);
+      line-height: 26px;
+      letter-spacing: -0.2px;
+      margin: 0;
+    }
+
+    .header-main{
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing:-0.3px;
+      color: hsl(179, 62%, 43%);
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .header-subheader{
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: -0.22px;
+      color: hsl(71, 73%, 54%);
+      margin-top: 0px;
+      margin-bottom: 11px;
+    }
+
+    .section-flex-container{
+      display: flex;
+      flex-direction: row;
+      background-color: hsl(179, 62%, 43%);
+      color: white;
+      padding: 0;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .flex-heading{
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: -0.22px;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .section-subscription{
+      padding: 2.5rem;
+      flex: 1 1 0;
+    }
+
+    .subscription-cost{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .cost-amount{
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 37px;
+      margin-right: 11px;
+    }
+
+    .cost-text{
+      line-height: 26px;
+      opacity: 0.5;
+    }
+
+    .subscription-button{
+      color: white;
+      background-color: hsl(71, 73%, 54%);
+      outline-color: transparent;
+      border-color: transparent;
+      width: 100%;
+      border-radius: 5px;
+      font-family: "Karla", sans-serif;
+      padding-top: 15px;
+      padding-bottom: 14px;
+      line-height: 19px;
+      letter-spacing: -0.22px;
+      font-weight: 700;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.0973011);
+    }
+
+    .subscription-button:hover{
+      cursor: pointer;
+      background-color: hsl(71, 73%, 44%);
+    }
+
+    .section-why-us{
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 2.5rem;
+      flex: 1 1 0;
+    }
+
+    .why-us-list{
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+      opacity: 0.75;
+    }
+
+    /* .footer-desktop{
+      position: absolute;
+      height: inherit;
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    } */
+
+    .attribution { 
+      font-size: 11px; 
+      text-align: center; 
+      }
+
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width: 635px){
+      body{
+        display: block;
+        padding: 4.5rem 2rem;
+      }
+      .main-card{
+        width: auto;
+        height: auto;
+      }
+
+      .section-flex-container{
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
-  Join our community
+  <div class="main-card">
+    <div class="section-header">
+      <h1 class="header-main">Join our community</h1>
 
-  30-day, hassle-free money back guarantee
+      <h2 class="header-subheader">30-day, hassle-free money back guarantee</h2>
 
-  Gain access to our full library of tutorials along with expert code reviews. 
-  Perfect for any developers who are serious about honing their skills.
+      <p>Gain access to our full library of tutorials along with expert code reviews. 
+        Perfect for any developers who are serious about honing their skills.</p>
+    </div>
+    <div class="section-flex-container">
 
-  Monthly Subscription
+      <div class="section-subscription">
+        <h2 class="flex-heading">Monthly Subscription</h2>
 
-  &dollar;29 per month
+        <div class="subscription-cost"><span class="cost-amount">&dollar;29</span><span class="cost-text">per month</span></div>
 
-  Full access for less than &dollar;1 a day
+        <p>Full access for less than &dollar;1 a day</p>
 
-  Sign Up
-
-  Why Us
-
-  Tutorials by industry experts
-  Peer &amp; expert code review
-  Coding exercises
-  Access to our GitHub repos
-  Community forum
-  Flashcard decks
-  New videos every week
-  
-  <footer>
+        <button class="subscription-button">Sign Up</button>
+      </div>
+      <div class="section-why-us">
+        <h2 class="flex-heading">Why Us</h2>
+        <ul class="why-us-list">
+          <li>Tutorials by industry experts</li>
+          <li>Peer &amp; expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- <footer class="footer-desktop">
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://elijahslaughter.ca">Eli Slaughter</a>.
     </p>
-  </footer>
+  </footer> -->
 </body>
 </html>
